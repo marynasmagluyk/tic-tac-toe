@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #945ea9;
+  margin: 50px;
+  padding: 50px;
+  border-radius: 25px;
+  color: #4b2564;
+
+  .title {
+    text-align: center;
+  }
+
+  .status-actions {
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+    margin: 30px 0;
+
+    span {
+      background-color: rgba(255, 54, 234, 0.99);
+    }
+    .reset, .new-game-btn {
+      cursor: pointer;
+    }
+
+    .reset:hover,
+    .new-game-btn:hover {
+      color: rgba(238, 238, 238, 0.63);
+    }
+  }
+
+  .game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 15px;
+    background-color: rgba(108, 53, 146, 0.68);
+
+    .grid-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 150px;
+      background-color: #945ea9;
+      cursor: pointer;
+    }
+
+    .x,
+    .o {
+      cursor: default;
+    }
+
+    .x:before {
+      content: '×';
+      font-size: 200px;
+    }
+
+    .o:before {
+      content: '○';
+      font-size: 200px;
+      color: #dda9ee;
+    }
+
+    .won:before {
+      color: rgba(255, 54, 234, 0.99);
+    }
+  }
+}
